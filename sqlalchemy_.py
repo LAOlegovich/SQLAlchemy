@@ -73,7 +73,6 @@ def view_data_of_sales(key,val):
         print(f'{i.title} | {i.name} | {i.price} | {i.date_sale}')
 
 if __name__ == '__main__':
-    os.environ["PASS_POSTGRES"]="1234"
     DSN = f"postgresql://postgres:{os.getenv('PASS_POSTGRES')}@localhost:5432/postgres"
     engine = sq.create_engine(DSN)
     create_tables(engine);
