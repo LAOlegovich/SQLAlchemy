@@ -75,7 +75,6 @@ def view_data_of_sales(session,val):
         print(f'{i.title:<40} | {i.name:<10} | {i.price:<5} | {i.date_sale.strftime("%d-%m-%Y")}')
 
 if __name__ == '__main__':
-    os.environ["PASS_POSTGRES"]="1234"
     DSN = f"postgresql://postgres:{os.getenv('PASS_POSTGRES')}@localhost:5432/postgres"
     engine = sq.create_engine(DSN)
     Session = sessionmaker(bind =engine)
